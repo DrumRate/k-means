@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Visualizing K-Means Clustering</title>
+  <link href='http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css' rel='stylesheet'>
+  <link rel='stylesheet' href='range-slider.css' type='text/css' />
+  <link rel='stylesheet' href='kmeans.css' type='text/css' />
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+    </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+  <div class='container'>
+    <div class='row col-xs-12'>
+      <h1> Кластеризация методом k-means </h1>
+      <br/>
+    </div>
+    <div class='row'>
+      <div class='col-xs-7'>
+        <div id='kmeans-vis'></div>
+        <div class='mean-square-error'>Среднеквадратичное расстояние <span class='mean-square-value'>еще не расчитано</span></div>
+      </div>
+      <div class='col-xs-5'>
+        <div class='row'>
+           <h3>Алгоритм</h3>
+          <div class='algorithm-start'>
+            Повторение для схождения:
+          </div>
+          <div class='step-title closest active'>
+            Найти ближайшие центроиды
+          </div>
+          <div class='step-description closest active'>
+			Найдите ближайший центроид к каждой точке и группируйте точки, которые имеют один и тот же ближайший центроид
+          </div>
+          <div class='step-title update'>
+            Обновить центроиды
+          </div>
+          <div class='step-description update'>
+            Обновите каждый центроид, чтобы он соответствовал средним точкам в его группе
+          </div>
+          <a class='step btn btn-primary find'>Find closest centroid</a>
+          <hr>
+        </div>
+        <div class='row'>
+          <h3 class='data-header'>Данные</h3>
+          Отдельные кластеры <div class='range-slider' id='range-slider'></div> Случайно
+          <br/>
+          <div class='input'>Число кластеров</div>: <input id='num-clusters' type='text' value='3'>
+          <br/>
+          <div class='input'>Кол-во центроидов</div>: <input id='num-centroids' type='text' value='3'>
+          <br/>
+          <br />
+          <a class='new-points btn btn-danger'>Новое точки</a>
+          <a class='new-centroids btn btn-danger'>Новые центроиды</a>
+        </div>
+      </div>
+    </div>
+     </div>
+  <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
+  <script src='d3.min.js'></script>
+  <script src='range-slider.js'></script>
+  <script src='kmeans.js'></script>
+</body>
+</html>

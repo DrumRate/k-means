@@ -50,7 +50,7 @@ $(function() {
   // Resets the text on the centroid button
   function resetCentroidUpdateText() {
     $step.addClass('find');
-    $step.html('Find closest centroid');
+    $step.html('Найти центроиды');
 
     $('.active').removeClass('active');
     $('.closest').addClass('active');
@@ -170,7 +170,7 @@ $(function() {
     resetCentroidUpdateText();
     voronoiGroup.selectAll('*').remove();
 
-    $meanSquareValue.html('not yet calculated');
+    $meanSquareValue.html('еще не расчитано');
   }
 
   // Randomly generates the clusters and initializes the d3 animation
@@ -200,7 +200,7 @@ $(function() {
       .style('stroke-width', '0.7')
       .attr('transform', function(d){ return 'translate(' + d[0] + ',' + d[1] + ')'; });
 
-    $meanSquareValue.html('not yet calculated');
+    $meanSquareValue.html('еще не расчитано');
   }
 
   // For each point, we find the centroid it is the closest to.
