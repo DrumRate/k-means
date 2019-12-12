@@ -1,4 +1,3 @@
-// Initial inspiration was from: http://www.bytemuse.com/post/k-means-clustering-visualization/
 $(function() {
 
   // Number of points to be used in the K-Means Visualization
